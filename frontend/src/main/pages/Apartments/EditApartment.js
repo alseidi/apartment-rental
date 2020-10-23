@@ -77,6 +77,9 @@ export default function EditApartment() {
       setValue("price", pricePerMonth.$numberDecimal);
       setValue("lat", lat.$numberDecimal);
       setValue("lng", lng.$numberDecimal);
+      setLat(parseFloat(lat.$numberDecimal));
+      setLng(parseFloat(lng.$numberDecimal));
+      setCenter({ lat, lng });
     }
   }, []);
 

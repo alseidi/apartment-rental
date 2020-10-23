@@ -19,7 +19,7 @@ async function login(req, res, next) {
   }
 
   if (!user) {
-    return next(new Error());
+    res.status(404).send("The user with this email doesn't exist");
   }
 
   try {

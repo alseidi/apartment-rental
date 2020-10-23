@@ -66,7 +66,7 @@ async function addUser(req, res, next) {
 }
 
 async function updateUser(req, res, next) {
-  if (req.user.role === "admin") {
+  if (req.user.role === "admin" || req.user._id === req.params.id) {
     try {
       let userId;
       if (req.user._id === req.params.id) {
@@ -94,7 +94,7 @@ async function updateUser(req, res, next) {
         }
       }
     } catch (err) {
-      return next(err);
+      res.status(404).send("The user with id doesn't exist");
     }
   } else {
     res.status(401).send("This user doesn't have permission to update user");

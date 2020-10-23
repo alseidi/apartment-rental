@@ -140,6 +140,7 @@ const ApartmentsTableToolbar = (props) => {
       actions.setApartmentsFilter({ priceValue, floorSizeValue, roomsValue })
     );
     dispatch(actions.getApartments(pageInfo));
+    dispatch(actions.getTotalApartments());
   };
 
   // handle Floor Size Change
@@ -152,6 +153,7 @@ const ApartmentsTableToolbar = (props) => {
       actions.setApartmentsFilter({ priceValue, floorSizeValue, roomsValue })
     );
     dispatch(actions.getApartments(pageInfo));
+    dispatch(actions.getTotalApartments());
   };
 
   // handle Rooms Number Change
@@ -164,6 +166,7 @@ const ApartmentsTableToolbar = (props) => {
       actions.setApartmentsFilter({ priceValue, floorSizeValue, roomsValue })
     );
     dispatch(actions.getApartments(pageInfo));
+    dispatch(actions.getTotalApartments());
   };
 
   return (
